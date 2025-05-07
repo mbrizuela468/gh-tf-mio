@@ -1,4 +1,4 @@
-name: "Terraform"
+name: Terraform
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
    
       # Terraform action you want to perform
       action:
-        description: 'Terraform Action to Perform'
+        description: Terraform Action to Perform
         type: choice
         options:
         - Terraform_apply
@@ -15,7 +15,7 @@ on:
 
 jobs:
   terraform_apply:
-    name: "Terraform_apply"
+    name: Terraform_apply
     if: ${{ github.event.inputs.action == 'Terraform_apply' }}
     runs-on: ubuntu-latest
     steps:
@@ -46,7 +46,7 @@ jobs:
             AWS_DEFAULT_REGION: ${{ secrets.REGION }}
   
   terraform_destroy:
-    name: "Terraform_destroy"
+    name: Terraform_destroy
     if: ${{ github.event.inputs.action == 'Terraform_destroy' }}
     runs-on: ubuntu-latest
     steps:
